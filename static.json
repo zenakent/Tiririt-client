@@ -5,7 +5,7 @@
   },
   "proxies": {
     "/api": {
-      "origin": "https://twitter-clone-server-school.herokuapp.com/"
+      "origin": "https://twitter-clone-server-school.herokuapp.com/api"
     }
   }
 }
