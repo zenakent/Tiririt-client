@@ -4,7 +4,7 @@ body {
 
 /* Nav */
 
-.navbar {
+/* .navbar {
   margin-bottom: 1rem;
 }
 
@@ -50,7 +50,7 @@ ul.nav.navbar-nav li {
   background-image: url("./images/signed-out-home.jpg");
   text-align: center;
   padding: 1rem;
-  background-position: center center;
+  background-position: 50% 30%;
   background-size: cover;
   color: white;
   text-shadow: 0 0 8px #66757f;
@@ -80,7 +80,7 @@ ul.nav.navbar-nav li {
 a.btn.btn-danger,
 a.btn.btn-danger:hover {
   color: #fff;
-}
+} */
 
 /* .navbar-header {
   margin: 0 auto;

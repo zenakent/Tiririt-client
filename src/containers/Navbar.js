@@ -19,7 +19,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand">
-        <div className="container-fluid">
+        <div className="navigation container-fluid ">
           <div className="navbar-header">
             <Link to="/" className="navbar-brand">
               <img src={Logo} alt="Home" />
