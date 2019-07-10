@@ -47,7 +47,6 @@ class MessageForm extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     errors: state.errors,
     currentUser: state.currentUser

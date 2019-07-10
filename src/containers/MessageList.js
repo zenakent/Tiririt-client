@@ -5,6 +5,13 @@ import MessageItem from "../components/MessageItem";
 import MessageForm from "../containers/MessageForm";
 
 class MessageList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      messages: []
+    };
+  }
+
   componentDidMount() {
     this.props.fetchMessages();
   }
