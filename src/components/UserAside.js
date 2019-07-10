@@ -4,27 +4,28 @@ import "../css/UserAside.css";
 
 class UserAside extends Component {
   render() {
-    //     <aside className="col-sm-2 col-2">
+    // <aside className="col-sm-2 col-2 UserAside">
     //   <div className="panel panel-default">
     //     <div className="panel-body">
     //       <img
     //         src={this.props.profileImageUrl || DefaultProfileImg}
     //         alt={this.props.username}
-    //         className="img-thumbnail"
+    //         className="img-thumbnail rounded-circle"
     //       />
+    //       <h4>{this.props.username}</h4>
     //     </div>
     //   </div>
-    // </aside>;
+    // </aside>
     return (
-      <aside className="col-sm-2 col-2">
-        <div className="panel panel-default">
-          <div className="panel-body">
+      <aside className="col-sm-4 col-4 UserAside">
+        <div className="card">
+          <div className="card-body">
             <img
               src={this.props.profileImageUrl || DefaultProfileImg}
               alt={this.props.username}
-              className="img-thumbnail"
+              className="img-thumbnail rounded-circle"
             />
-            <h4>{this.props.username}</h4>
+            <h4 className="d-inline ml-1">{this.props.username}</h4>
           </div>
         </div>
       </aside>

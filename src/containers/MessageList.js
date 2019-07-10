@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchMessages, removeMessage } from "../store/actions/messages";
 import MessageItem from "../components/MessageItem";
-import MessageForm from "../containers/MessageForm";
+// import MessageForm from "../containers/MessageForm";
 
 class MessageList extends Component {
   constructor(props) {
@@ -32,8 +32,7 @@ class MessageList extends Component {
     ));
     return (
       <div className="row col-sm-8 col-8">
-        <div className="offset-1 col-sm-10">
-          <MessageForm />
+        <div className=" col-sm-10">
           <ul className="list-group" id="messages">
             {messageList.reverse()}
           </ul>
