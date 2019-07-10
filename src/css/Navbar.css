@@ -1,0 +1,33 @@
+.navbar {
+  margin-bottom: 1rem;
+  color: gray;
+  background-color: #1c2938;
+}
+
+.navbar .container-fluid {
+  /* display: inline; */
+  justify-content: space-around;
+}
+
+.navbar a {
+  font-weight: bold;
+  color: #1ea1f2;
+}
+
+.navbar a:hover {
+  color: #1ea1f2;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.navbar-brand > img {
+  display: inline-block;
+  width: 20px;
+  border-radius: 2px;
+  margin-bottom: 2px;
+  margin-right: 5px;
+}
+
+ul.nav.navbar-nav li {
+  margin: 0 0.5rem;
+}

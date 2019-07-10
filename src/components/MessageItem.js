@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import DefaultProfileImg from "../images/default-profile-image.jpg";
+import "../css/MessageItem.css";
 
 class MessageItem extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class MessageItem extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="MessageItem">
         <li className="list-group-item">
           <img
             src={this.props.profileImageUrl || DefaultProfileImg}
@@ -28,9 +29,12 @@ class MessageItem extends Component {
             </span>
             <p>{this.props.text}</p>
             {this.props.isCorrectUser && (
-              <a className="btn btn-danger" onClick={this.props.removeMessage}>
+              <button
+                className="btn btn-danger"
+                onClick={this.props.removeMessage}
+              >
                 Delete
-              </a>
+              </button>
             )}
           </div>
         </li>

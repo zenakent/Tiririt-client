@@ -21,7 +21,7 @@ class MessageForm extends Component {
     evt.preventDefault();
     this.props.postNewMessage(this.state.message);
     this.setState({ message: "" });
-    this.props.history.push("/");
+    // this.props.history.push("/");
   }
 
   render() {
@@ -31,13 +31,14 @@ class MessageForm extends Component {
           <div className="alert alert-danger">{this.props.errors.message}</div>
         )}
         <input
+          style={{ width: "404px", display: "inline" }}
           type="text"
           name="message"
           className="form-control"
           value={this.state.message}
           onChange={this.handleChange}
         />
-        <button type="submit" className="btn btn-success pull-right">
+        <button type="submit" className="btn btn-success pull-right ml-4">
           Add my message
         </button>
       </form>
@@ -46,8 +47,10 @@ class MessageForm extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state);
   return {
-    errors: state.errors
+    errors: state.errors,
+    currentUser: state.currentUser
   };
 }
 
