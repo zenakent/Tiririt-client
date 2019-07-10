@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../store/actions/auth";
 import Logo from "../images/warbler-logo.png";
+import "../css/Navbar.css";
 
 class Navbar extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class Navbar extends Component {
           <div className="navbar-header">
             <Link to="/" className="navbar-brand">
               <img src={Logo} alt="Home" />
+              Tiririt
             </Link>
           </div>
           {this.props.currentUser.isAuthenticated ? (

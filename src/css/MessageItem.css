@@ -1,0 +1,26 @@
+.MessageItem {
+  background-color: #16212b;
+}
+
+.MessageItem .list-group-item {
+  color: white;
+  background-color: #16212b;
+}
+
+.MessageItem:hover {
+  background-color: #101922;
+}
+
+#messages .list-group-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 7px 20px 12px;
+}
+
+#messages:not(.no-hover) .list-group-item:hover {
+  background-color: #101922;
+}
+
+.MessageItem a {
+  color: white;
+}

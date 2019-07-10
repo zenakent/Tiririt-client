@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import errors from "../store/reducers/errors";
+import PropTypes from "prop-types";
 
 class AuthForm extends Component {
   constructor(props) {
@@ -69,6 +69,7 @@ class AuthForm extends Component {
                 name="password"
                 onChange={this.handeChange}
                 type="password"
+                value={password}
               />
               {signUp && (
                 <div>
@@ -105,5 +106,15 @@ class AuthForm extends Component {
     );
   }
 }
+
+AuthForm.propTypes = {
+  buttonText: PropTypes.string,
+  errors: PropTypes.object,
+  heading: PropTypes.string,
+  history: PropTypes.object,
+  onAuth: PropTypes.func,
+  signIn: PropTypes.bool,
+  removeError: PropTypes.func
+};
 
 export default AuthForm;
