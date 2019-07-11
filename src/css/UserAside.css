@@ -1,12 +1,18 @@
+.UserAside {
+  box-sizing: border-box;
+}
+
 .UserAside .img-thumbnail {
   height: 72px;
   width: 72px;
   border: 2px solid #15202b;
   /* border-radius: 50%; */
   padding: 0;
+  z-index: -100;
 }
 
 .UserAside .card {
+  border: 1px solid white;
   color: white;
   background-color: #15202b;
 }

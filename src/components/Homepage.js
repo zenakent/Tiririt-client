@@ -4,11 +4,12 @@ import MessageTimeline from "./MessageTimeline";
 
 class Homepage extends Component {
   render() {
+    console.log(this.props);
     if (!this.props.currentUser.isAuthenticated) {
       return (
         <div className="home-hero">
           <h1>What's Happening</h1>
-          <h4>New to Twitter-Clone?</h4>
+          <h4>New to Tiririt?</h4>
           <Link to="/signup" className="btn btn-primary">
             Sign up here
           </Link>

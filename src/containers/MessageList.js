@@ -18,6 +18,7 @@ class MessageList extends Component {
 
   render() {
     const { messages, removeMessage } = this.props;
+    console.log(messages);
     let messageList = messages.map(m => (
       <MessageItem
         test={m}
