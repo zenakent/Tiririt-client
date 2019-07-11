@@ -19,16 +19,16 @@ class Navbar extends Component {
   }
   render() {
     return (
-      <nav className="Navbar">
-        <div className="brand-name">
-          <Link to="/" className="navbar-brand">
-            <img src={Logo} alt="Home" />
-            Tiririt
-          </Link>
-        </div>
-        <div className="nav-links">
+      <nav className="navbar navbar-expand">
+        <div className="navigation container-fluid ">
+          <div className="navbar-header">
+            <Link to="/" className="navbar-brand">
+              <img src={Logo} alt="Home" />
+              Tiririt
+            </Link>
+          </div>
           {this.props.currentUser.isAuthenticated ? (
-            <ul className="nav navbar-nav navbar-right no-wraps">
+            <ul className="nav navbar-nav navbar-right">
               <li>
                 <Link
                   to={`/users/${this.props.currentUser.user.id}/messages/new`}
@@ -41,7 +41,7 @@ class Navbar extends Component {
               </li>
             </ul>
           ) : (
-            <ul className="nav navbar-nav navbar-right nowraps">
+            <ul className="nav navbar-nav navbar-right">
               <li>
                 <Link to="/signup">Sign Up</Link>
               </li>
