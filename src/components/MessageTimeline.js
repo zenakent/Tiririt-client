@@ -6,7 +6,7 @@ class MessageTimeline extends Component {
   render() {
     return (
       <div className="row flex-column flex-md-row justify-content-center">
-        <div className="col-md-4 order-md-1 mb-sm-3">
+        <div className="col-md-4 order-md-1 mb-sm-3 mb-3">
           <UserAside
             profileImageUrl={this.props.profileImageUrl}
             username={this.props.username}
