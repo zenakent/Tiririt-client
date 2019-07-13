@@ -19,33 +19,48 @@ class Navbar extends Component {
   }
   render() {
     return (
-      <nav className="Navbar">
-        <div className="brand-name">
-          <Link to="/" className="navbar-brand">
-            <img src={Logo} alt="Home" />
-            Tiririt
-          </Link>
-        </div>
-        <div className="nav-links">
+      <nav class="navbar navbar-expand-lg navbar-dark  mb-3">
+        <Link to="/" className="navbar-brand">
+          <img src={Logo} alt="Home" />
+          Tiririt
+        </Link>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon" />
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end "
+          id="navbarSupportedContent"
+        >
           {this.props.currentUser.isAuthenticated ? (
-            <ul className="nav navbar-nav navbar-right no-wraps">
-              <li>
+            <ul className="navbar-nav justify-content-between">
+              <li className="nav-item">
                 <Link
                   to={`/users/${this.props.currentUser.user.id}/messages/new`}
                 >
                   New Message
                 </Link>
               </li>
-              <li>
-                <a onClick={this.logout}>Log Out</a>
+              <li className="nav-item">
+                <a href="#" onClick={this.logout}>
+                  Log Out
+                </a>
               </li>
             </ul>
           ) : (
-            <ul className="nav navbar-nav navbar-right nowraps">
-              <li>
+            <ul className="navbar-nav justify-content-between">
+              <li className="nav-item">
                 <Link to="/signup">Sign Up</Link>
               </li>
-              <li>
+              <li className="nav-item">
                 <Link to="/signin">Sign In</Link>
               </li>
             </ul>

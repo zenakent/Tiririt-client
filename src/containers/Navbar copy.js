@@ -19,7 +19,7 @@ class Navbar extends Component {
   }
   render() {
     return (
-      <nav className="navbar navbar-expand">
+      <nav className="navbar navbar-expand justify-content-end">
         <div className="navigation container-fluid ">
           <div className="navbar-header">
             <Link to="/" className="navbar-brand">
