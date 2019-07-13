@@ -1,5 +1,4 @@
 .UserAside {
-  box-sizing: border-box;
 }
 
 .UserAside .img-thumbnail {
@@ -20,6 +19,8 @@
   color: #1ea1f2;
   background-color: #15202b;
   justify-content: center;
+  padding: 0;
+  border: 0;
 }
 
 .UserAside ul li a {
@@ -29,6 +30,28 @@
 }
 
 .UserAside img {
-  margin-top: 10px;
-  margin-left: 10px;
+  /* margin-top: 10px;
+  margin-left: 10px; */
+  padding: 10px 10px 10px 10px;
+}
+
+#userHandle a {
+  font-weight: 100;
+  font-size: 1rem;
+  color: #566471;
+}
+
+.card-name {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 25px;
+  margin: -1px 0 -2px 0;
+}
+
+.userStats {
+  padding: 16px;
+}
+
+.userScreenName {
+  padding: 16px;
 }

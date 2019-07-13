@@ -21,23 +21,36 @@ class UserAside extends Component {
     return (
       <div className="UserAside card mb-3" style={{ maxWidth: "540px" }}>
         <div className="row no-gutters">
-          <div className="col-md-4 col-4">
+          <div className="d-flex col-md-4 col-4">
             <img
               src={this.props.profileImageUrl || DefaultProfileImg}
               className="card-img rounded-circle"
               alt={this.props.username}
             />
           </div>
-          <div className="col-md-8 col-8">
+          <div className="col-md-8 col-8 ">
             <div className="card-body">
-              <h5 className="card-title">{this.props.username}</h5>
-              <p className="card-text">
-                <Link to="/">@{this.props.username} &nbsp;</Link>
-              </p>
+              <div className="userScreenName px-md-0">
+                <div className="card-name">{this.props.username}</div>
+                {/* <h5 className="card-title"></h5> */}
+                <p className="card-text">
+                  <span id="userHandle">
+                    <Link to="/">@{this.props.username} &nbsp;</Link>
+                  </span>
+                </p>
+              </div>
+              <div className="userStats d-md-none">
+                <ul className="list-group list-group-horizontal">
+                  <li className="list-group-item">
+                    <h6>Tiririts</h6>
+                    <a href="#">{this.props.messagesCount}</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-        <div className="row no-gutters">
+        <div className="row no-gutters d-none d-md-block userStats">
           <ul className="list-group list-group-horizontal">
             <li className="list-group-item">
               <h6>Tiririts</h6>
