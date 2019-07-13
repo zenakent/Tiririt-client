@@ -18,7 +18,7 @@ class UserAside extends Component {
     //   </div>
     // </aside>
     return (
-      <aside className="col-sm-4 col-4 UserAside">
+      <aside className="UserAside">
         <div className="card">
           <div className="card-body">
             <div className="row">

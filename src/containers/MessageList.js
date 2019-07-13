@@ -32,13 +32,9 @@ class MessageList extends Component {
       />
     ));
     return (
-      <div className="row col-sm-8 col-8">
-        <div className=" col-sm-10">
-          <ul className="list-group" id="messages">
-            {messageList.reverse()}
-          </ul>
-        </div>
-      </div>
+      <ul className="list-group" id="messages">
+        {messageList.reverse()}
+      </ul>
     );
   }
 }

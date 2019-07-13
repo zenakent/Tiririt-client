@@ -4,7 +4,6 @@ import MessageTimeline from "./MessageTimeline";
 
 class Homepage extends Component {
   render() {
-    console.log(this.props);
     if (!this.props.currentUser.isAuthenticated) {
       return (
         <div className="home-hero">
