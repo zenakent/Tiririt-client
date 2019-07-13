@@ -10,6 +10,7 @@ class MessageTimeline extends Component {
           <UserAside
             profileImageUrl={this.props.profileImageUrl}
             username={this.props.username}
+            messagesCount={this.props.messagesCount}
           />
         </div>
         <div className="col-md-8 order-md-2">

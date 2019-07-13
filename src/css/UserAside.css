@@ -11,8 +11,24 @@
   z-index: -100;
 }
 
-.UserAside .card {
-  border: 1px solid white;
+.card {
   color: white;
   background-color: #15202b;
+}
+
+.UserAside ul li {
+  color: #1ea1f2;
+  background-color: #15202b;
+  justify-content: center;
+}
+
+.UserAside ul li a {
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.UserAside img {
+  margin-top: 10px;
+  margin-left: 10px;
 }

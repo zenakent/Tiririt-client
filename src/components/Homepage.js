@@ -4,6 +4,14 @@ import MessageTimeline from "./MessageTimeline";
 
 class Homepage extends Component {
   render() {
+    let { currentUser, messages } = this.props;
+    let messagesCount = 0;
+    messages.forEach(m => {
+      if (currentUser.user.id === m.user._id) {
+        messagesCount += 1;
+      }
+      return messagesCount;
+    });
     if (!this.props.currentUser.isAuthenticated) {
       return (
         <div className="home-hero">
@@ -19,6 +27,7 @@ class Homepage extends Component {
     return (
       <div>
         <MessageTimeline
+          messagesCount={messagesCount}
           profileImageUrl={this.props.currentUser.user.profileImageUrl}
           username={this.props.currentUser.user.username}
         />

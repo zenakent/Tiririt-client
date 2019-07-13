@@ -1,6 +1,6 @@
 //responsible for routing logic
 import React, { Component } from "react";
-import { Switch, Route, withRouter, Redirect } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Homepage from "../components/Homepage";
 import AuthForm from "../components/AuthForm";
@@ -11,14 +11,20 @@ import MessageForm from "../containers/MessageForm";
 
 class Main extends Component {
   render() {
-    const { authUser, errors, removeError, currentUser } = this.props;
+    const { authUser, errors, removeError, currentUser, messages } = this.props;
     return (
       <div className="container">
         <Switch>
           <Route
             exact
             path="/"
-            render={props => <Homepage {...props} currentUser={currentUser} />}
+            render={props => (
+              <Homepage
+                {...props}
+                currentUser={currentUser}
+                messages={messages}
+              />
+            )}
           />
           <Route
             exact
@@ -66,7 +72,8 @@ class Main extends Component {
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
-    errors: state.errors
+    errors: state.errors,
+    messages: state.messages
   };
 }
 

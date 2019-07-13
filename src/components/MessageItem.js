@@ -5,10 +5,6 @@ import DefaultProfileImg from "../images/default-profile-image.jpg";
 import "../css/MessageItem.css";
 
 class MessageItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   render() {
     return (
       <div className="MessageItem">
