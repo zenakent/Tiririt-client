@@ -1,5 +1,6 @@
 .MessageItem {
   background-color: #16212b;
+  border: 1px solid #38444d;
 }
 
 .MessageItem .list-group-item {
@@ -30,4 +31,16 @@
   height: 48px;
   width: 48px;
   margin: 2px 30px 10px 10px;
+}
+
+#messageTop {
+  height: 60px;
+  background-color: #1c3448;
+  border: 1px solid #38444d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
 }

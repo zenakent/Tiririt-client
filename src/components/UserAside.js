@@ -5,19 +5,6 @@ import "../css/UserAside.css";
 
 class UserAside extends Component {
   render() {
-    console.log(this.props);
-    // <aside className="col-sm-2 col-2 UserAside">
-    //   <div className="panel panel-default">
-    //     <div className="panel-body">
-    //       <img
-    //         src={this.props.profileImageUrl || DefaultProfileImg}
-    //         alt={this.props.username}
-    //         className="img-thumbnail rounded-circle"
-    //       />
-    //       <h4>{this.props.username}</h4>
-    //     </div>
-    //   </div>
-    // </aside>
     return (
       <div className="UserAside card mb-3" style={{ maxWidth: "540px" }}>
         <div className="row no-gutters">
@@ -42,8 +29,16 @@ class UserAside extends Component {
               <div className="userStats d-md-none">
                 <ul className="list-group list-group-horizontal">
                   <li className="list-group-item">
-                    <h6>Tiririts</h6>
+                    <h5>Tiririts</h5>
                     <a href="#">{this.props.messagesCount}</a>
+                  </li>
+                  <li className="list-group-item">
+                    <h5>Followers</h5>
+                    <a href="#">{this.props.followersCount}</a>
+                  </li>
+                  <li className="list-group-item">
+                    <h5>Following</h5>
+                    <a href="#">{this.props.followingCount}</a>
                   </li>
                 </ul>
               </div>
@@ -53,8 +48,16 @@ class UserAside extends Component {
         <div className="row no-gutters d-none d-md-block userStats">
           <ul className="list-group list-group-horizontal">
             <li className="list-group-item">
-              <h6>Tiririts</h6>
+              <h5>Tiririts</h5>
               <a href="#">{this.props.messagesCount}</a>
+            </li>
+            <li className="list-group-item">
+              <h5>Followers</h5>
+              <a href="#">{this.props.followersCount}</a>
+            </li>
+            <li className="list-group-item">
+              <h5>Following</h5>
+              <a href="#">{this.props.followingCount}</a>
             </li>
           </ul>
         </div>

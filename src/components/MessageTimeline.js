@@ -8,6 +8,8 @@ class MessageTimeline extends Component {
       <div className="row flex-column flex-md-row justify-content-center">
         <div className="col-sm-12 col-md-4 order-sm-1 mb-sm-3 mb-3">
           <UserAside
+            followersCount={this.props.followersCount}
+            followingCount={this.props.followingCount}
             profileImageUrl={this.props.profileImageUrl}
             username={this.props.username}
             messagesCount={this.props.messagesCount}

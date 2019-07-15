@@ -12,6 +12,7 @@ class Homepage extends Component {
       }
       return messagesCount;
     });
+
     if (!this.props.currentUser.isAuthenticated) {
       return (
         <div className="home-hero">
@@ -27,9 +28,12 @@ class Homepage extends Component {
     return (
       <div>
         <MessageTimeline
+          followersCount={this.props.currentUser.user.followers.length}
+          followingCount={this.props.currentUser.user.following.length}
           messagesCount={messagesCount}
           profileImageUrl={this.props.currentUser.user.profileImageUrl}
           username={this.props.currentUser.user.username}
+          followers={this.props.currentUser}
         />
       </div>
     );

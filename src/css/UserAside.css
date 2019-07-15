@@ -13,6 +13,8 @@
 .card {
   color: white;
   background-color: #15202b;
+  border-radius: 0;
+  border: 1px solid #38444d;
 }
 
 .UserAside ul li {
@@ -54,4 +56,9 @@
 
 .userScreenName {
   padding: 16px;
+}
+
+.UserAside .list-group {
+  justify-content: space-around;
+  align-items: center;
 }
