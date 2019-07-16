@@ -8,10 +8,10 @@ class UserAside extends Component {
     return (
       <div className="UserAside card mb-3" style={{ maxWidth: "540px" }}>
         <div className="row no-gutters">
-          <div className="d-flex col-md-4 col-4">
+          <div className="d-flex justify-content-center align-items-center col-md-4 col-4">
             <img
               src={this.props.profileImageUrl || DefaultProfileImg}
-              className="card-img rounded-circle"
+              className="card-img img-fluid rounded-circle"
               alt={this.props.username}
             />
           </div>

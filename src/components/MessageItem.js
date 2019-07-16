@@ -9,14 +9,16 @@ class MessageItem extends Component {
     return (
       <div className="MessageItem">
         <li className="list-group-item">
-          <img
-            src={this.props.profileImageUrl || DefaultProfileImg}
-            alt={this.props.username}
-            height="100"
-            width="100"
-            className="timeline-image"
-          />
-          <div className="message-area">
+          <div className="MessageItem-img-div col-2">
+            <img
+              src={this.props.profileImageUrl || DefaultProfileImg}
+              alt={this.props.username}
+              height="100"
+              width="100"
+              className="card-img timeline-image"
+            />
+          </div>
+          <div className="col-8 message-area">
             <Link to="/">@{this.props.username} &nbsp;</Link>
             <span className="text-muted">
               <Moment className="text-muted" format="DD MMM YYYY">

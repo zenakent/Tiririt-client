@@ -28,9 +28,16 @@
 
 .timeline-image {
   border-radius: 50px;
-  height: 48px;
-  width: 48px;
-  margin: 2px 30px 10px 10px;
+  height: 60px;
+  width: 60px;
+  /* margin: 2px 30px 10px 10px; */
+}
+
+.MessageItem .MessageItem-img-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
 }
 
 #messageTop {
