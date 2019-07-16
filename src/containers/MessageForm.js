@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { postNewMessage } from "../store/actions/messages";
+import "../css/MessageForm.css";
 
 class MessageForm extends Component {
   constructor(props) {
@@ -21,27 +22,62 @@ class MessageForm extends Component {
     evt.preventDefault();
     this.props.postNewMessage(this.state.message);
     this.setState({ message: "" });
-    this.props.history.push("/");
+    // this.props.history.push("/");
   }
 
   render() {
     return (
-      <form onSubmit={this.handleNewMessage}>
-        {this.props.errors.message && (
-          <div className="alert alert-danger">{this.props.errors.message}</div>
-        )}
-        <input
-          style={{ width: "404px", display: "inline" }}
-          type="text"
-          name="message"
-          className="form-control"
-          value={this.state.message}
-          onChange={this.handleChange}
-        />
-        <button type="submit" className="btn btn-success pull-right ml-4">
-          Add my message
-        </button>
-      </form>
+      // <div className="MessageForm container d-flex">
+      //   <form onSubmit={this.handleNewMessage}>
+      //     {this.props.errors.message && (
+      //       <div className="alert alert-danger">
+      //         {this.props.errors.message}
+      //       </div>
+      //     )}
+      //     <input
+      //       style={{ width: "404px", display: "inline" }}
+      //       type="text"
+      //       name="message"
+      //       className="form-control"
+      //       value={this.state.message}
+      //       onChange={this.handleChange}
+      //       placeholder="What's Happening?"
+      //     />
+      //     <button type="submit" className="btn btn-success pull-right ml-4">
+      //       Add my message
+      //     </button>
+      //   </form>
+      // </div>
+      <div className="d-flex justify-content-center">
+        <div className="MessageForm card text-center">
+          <div className="card-header">Got a Message?</div>
+          <div className="card-body message-form">
+            <form onSubmit={this.handleNewMessage}>
+              {this.props.errors.message && (
+                <div className="alert alert-danger">
+                  {this.props.errors.message}
+                </div>
+              )}
+              <input
+                style={{ display: "inline" }}
+                type="text"
+                name="message"
+                className="form-control"
+                value={this.state.message}
+                onChange={this.handleChange}
+                placeholder="What's Happening?"
+              />
+              <button
+                type="submit"
+                className="btn btn-success pull-right ml-4 mt-3"
+              >
+                Add my message
+              </button>
+            </form>
+          </div>
+          <div className="card-footer text-muted" />
+        </div>
+      </div>
     );
   }
 }

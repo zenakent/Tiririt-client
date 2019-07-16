@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchMessages, removeMessage } from "../store/actions/messages";
 import MessageItem from "../components/MessageItem";
-// import MessageForm from "../containers/MessageForm";
+import MessageForm from "../containers/MessageForm";
 
 class MessageList extends Component {
   async componentDidMount() {
     this.props.fetchMessages();
+    console.log(this);
   }
 
   render() {
@@ -25,6 +26,7 @@ class MessageList extends Component {
     ));
     return (
       <div>
+        {/* <MessageForm /> */}
         <div id="messageTop">Tiririts</div>
         <ul className="list-group" id="messages">
           {messageList.reverse()}

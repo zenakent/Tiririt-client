@@ -9,13 +9,13 @@ class MessageItem extends Component {
     return (
       <div className="MessageItem">
         <li className="list-group-item">
-          <div className="MessageItem-img-div col-2">
+          <div className="MessageItem-img-div col-3 ">
             <img
               src={this.props.profileImageUrl || DefaultProfileImg}
               alt={this.props.username}
               height="100"
               width="100"
-              className="card-img timeline-image"
+              className="card-img img-fluid timeline-image"
             />
           </div>
           <div className="col-8 message-area">

@@ -6,7 +6,7 @@ class MessageTimeline extends Component {
   render() {
     return (
       <div className="row flex-column flex-md-row justify-content-center">
-        <div className="col-sm-12 col-md-4 order-sm-1 mb-sm-3 mb-3">
+        <div className="col-sm-12 col-md-5 col-lg-4 order-sm-1 mb-sm-3 mb-3">
           <UserAside
             followersCount={this.props.followersCount}
             followingCount={this.props.followingCount}
@@ -15,7 +15,7 @@ class MessageTimeline extends Component {
             messagesCount={this.props.messagesCount}
           />
         </div>
-        <div className="col-sm-12 col-md-8 order-sm-2">
+        <div className="col-sm-12 col-md-7 col-lg-8 order-sm-2">
           <MessageList />
         </div>
       </div>

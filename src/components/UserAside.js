@@ -19,7 +19,7 @@ class UserAside extends Component {
             <div className="card-body">
               <div className="userScreenName px-md-0">
                 <div className="card-name">{this.props.username}</div>
-                {/* <h5 className="card-title"></h5> */}
+                {/* <h6 className="card-title"></h6> */}
                 <p className="card-text">
                   <span id="userHandle">
                     <Link to="/">@{this.props.username} &nbsp;</Link>
@@ -29,15 +29,15 @@ class UserAside extends Component {
               <div className="userStats d-md-none">
                 <ul className="list-group list-group-horizontal">
                   <li className="list-group-item">
-                    <h5>Tiririts</h5>
+                    <h6>Tiririts</h6>
                     <a href="#">{this.props.messagesCount}</a>
                   </li>
                   <li className="list-group-item">
-                    <h5>Followers</h5>
+                    <h6>Followers</h6>
                     <a href="#">{this.props.followersCount}</a>
                   </li>
                   <li className="list-group-item">
-                    <h5>Following</h5>
+                    <h6>Following</h6>
                     <a href="#">{this.props.followingCount}</a>
                   </li>
                 </ul>
@@ -48,15 +48,15 @@ class UserAside extends Component {
         <div className="row no-gutters d-none d-md-block userStats">
           <ul className="list-group list-group-horizontal">
             <li className="list-group-item">
-              <h5>Tiririts</h5>
+              <h6>Tiririts</h6>
               <a href="#">{this.props.messagesCount}</a>
             </li>
             <li className="list-group-item">
-              <h5>Followers</h5>
+              <h6>Followers</h6>
               <a href="#">{this.props.followersCount}</a>
             </li>
             <li className="list-group-item">
-              <h5>Following</h5>
+              <h6>Following</h6>
               <a href="#">{this.props.followingCount}</a>
             </li>
           </ul>

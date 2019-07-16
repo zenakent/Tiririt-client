@@ -1,0 +1,21 @@
+.MessageForm {
+  justify-content: center;
+  border: 1px solid #38444d;
+}
+
+.MessageForm .message-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.card-header {
+  background-color: #1c3448;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.card-footer {
+  background-color: #1c3448;
+}
