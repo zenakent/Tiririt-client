@@ -12,6 +12,7 @@ import MessageForm from "../containers/MessageForm";
 class Main extends Component {
   render() {
     const { authUser, errors, removeError, currentUser, messages } = this.props;
+    console.log(this.props.currentUser);
     return (
       <div className="container">
         <Switch>

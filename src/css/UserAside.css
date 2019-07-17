@@ -1,22 +1,28 @@
-.UserAside {
+/* .UserAside {
   position: relative;
 }
 
+.UserAside .card .card-img-top {
+  height: 150px;
+}
+
 .profile-Image {
-  height: 1000px;
-  width: 1000px;
   position: absolute;
   left: 0;
-  top: 0;
-  bottom: 0;
+  top: 80px;
+  bottom: 100px;
   right: 0;
+}
+
+.profile-Image img {
+  border: 3px solid #15202b;
 }
 
 .UserAside .img-thumbnail {
   height: 72px;
   width: 72px;
   border: 2px solid #15202b;
-  /* border-radius: 50%; */
+  
   padding: 0;
   z-index: -100;
 }
@@ -26,6 +32,11 @@
   background-color: #15202b;
   border-radius: 0;
   border: 1px solid #38444d;
+}
+
+.UserAside .profile-Image .card-img {
+  height: 72px;
+  width: 72px;
 }
 
 .UserAside ul li {
@@ -40,17 +51,13 @@
   display: flex;
   font-weight: bold;
   justify-content: center;
-}
+} */
 
-.UserAside img {
-  /* height: 100px; */
-  /* width: 100px; */
-  /* margin-top: 10px;
-  margin-left: 10px; */
+/* .UserAside img {
   padding: 10px 10px 10px 10px;
-}
+} */
 
-#userHandle a {
+/* #userHandle a {
   font-weight: 100;
   font-size: 1rem;
   color: #566471;
@@ -65,13 +72,144 @@
 
 .userStats {
   padding: 16px;
+  line-height: 20px;
+  font-size: 14px;
+} */
+
+/* .userStats .Stat-Label {
+  color: #8899a6;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 16px;
+  overflow: hidden;
 }
 
-.userScreenName {
-  padding: 16px;
+.userStats .Stat-Value {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 3px;
+} */
+
+/* .userScreenName {
+  position: absolute;
+  top: 103px;
+  left: 90px;
+  width: 185px;
 }
 
 .UserAside .list-group {
   justify-content: space-around;
   align-items: center;
+}
+
+.Arrange {
+  box-sizing: border-box;
+  display: table;
+  margin: 0;
+  min-width: 100%;
+  padding: 0;
+}
+
+.Arrange--equal {
+  table-layout: fixed;
+}
+
+.Arrange--sizeFit {
+  display: table-cell;
+  vertical-align: bottom;
+  width: 1%;
+  padding: 0;
+} */
+
+/* .UserAside {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  position: relative;
+  background-color: #15202b;
+} */
+
+/* .UserAside-Banner {
+  grid-area: 1 / 1 / 3 / 6;
+}
+.UserAside-Content {
+  grid-area: 3 / 1 / 5 / 6;
+}
+.profile-Image {
+  grid-area: 2 / 1 / 4 / 3;
+  height: 72px;
+  width: 72px;
+  position: absolute;
+  top: 28px;
+  left: 10px;
+} */
+
+.UserAside {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: #15202b;
+  border: 1px solid #38444d;
+}
+
+.UserAside-Banner {
+  grid-area: 1 / 1 / 3 / 7;
+  display: grid;
+  align-items: center;
+}
+.profile-Image {
+  grid-area: 2 / 1 / 4 / 3;
+  padding: 6px 6px 6px 6px;
+}
+
+.profile-Image img {
+  border: 3px solid #15202b;
+}
+.userScreenName {
+  grid-area: 3 / 3 / 4 / 7;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.userScreenName .userName {
+  grid-area: 1 / 1 / 2 / 2;
+  position: absolute;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.userScreenName .userHandle {
+  grid-area: 2 / 1 / 3 / 2;
+  line-height: 30px;
+}
+
+.Tiririts {
+  grid-area: 4 / 1 / 5 / 3;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.Following {
+  grid-area: 4 / 3 / 5 / 5;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.Follower {
+  grid-area: 4 / 5 / 5 / 7;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
