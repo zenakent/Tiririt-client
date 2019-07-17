@@ -162,6 +162,12 @@
   grid-area: 1 / 1 / 3 / 7;
   display: grid;
   align-items: center;
+  background-image: url("../images/useraside-banner.png");
+  background-size: 100%;
+  background-repeat: no-repeat no-repeat;
+}
+
+.UserAside-Banner img {
 }
 .profile-Image {
   grid-area: 2 / 1 / 4 / 3;

@@ -9,7 +9,7 @@ class MessageItem extends Component {
     return (
       <div className="MessageItem">
         <li className="list-group-item">
-          <div className="MessageItem-img-div col-2 col-md-3 col-lg-2">
+          <div className="MessageItem-img-div col-2 ">
             <img
               src={this.props.profileImageUrl || DefaultProfileImg}
               alt={this.props.username}
@@ -18,7 +18,7 @@ class MessageItem extends Component {
               className="img-fluid timeline-image"
             />
           </div>
-          <div className="col-10 col-md-9 col-lg-10message-area">
+          <div className="col-10 message-area">
             <Link to="/">@{this.props.username} &nbsp;</Link>
             <span className="text-muted">
               <Moment className="text-muted" format="DD MMM YYYY">

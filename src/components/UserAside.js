@@ -9,7 +9,7 @@ class UserAside extends Component {
     return (
       <section className="UserAside">
         <div className="UserAside-Banner">
-          <img src={BannerImage} className="img-fluid" alt="..." />
+          {/* <img src={BannerImage} className="img-fluid" alt="..." /> */}
         </div>
         <div className="profile-Image">
           <img
