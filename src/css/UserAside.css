@@ -213,3 +213,18 @@
   align-items: center;
   text-align: center;
 }
+
+.stat-counts {
+  color: #1da1f2;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.stat-title {
+  color: #8899a6;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 16px;
+  /* overflow: hidden; */
+}

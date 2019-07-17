@@ -25,16 +25,16 @@ class UserAside extends Component {
           </div>
         </div>
         <div className="Tiririts mt-1">
-          <h6>Tiririts</h6>
-          <a href="#">{this.props.messagesCount}</a>
+          <span className="stat-title">Tiririts</span>
+          <span className="stat-counts">{this.props.messagesCount}</span>
         </div>
         <div className="Following mt-1">
-          <h6>Followers</h6>
-          <a href="#">{this.props.followersCount}</a>
+          <span className="stat-title">Followers</span>
+          <span className="stat-counts">{this.props.followersCount}</span>
         </div>
         <div className="Follower mt-1">
-          <h6>Following</h6>
-          <a href="#">{this.props.followingCount}</a>
+          <span className="stat-title">Following</span>
+          <span className="stat-counts">{this.props.followingCount}</span>
         </div>
       </section>
     );
