@@ -1,0 +1,97 @@
+.jumbotron {
+  background-image: url("../images/useraside-banner.png");
+  background-size: cover;
+  background-repeat: no-repeat no-repeat;
+  background-position: center center;
+  height: 300px;
+}
+
+.userProfile {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.banner {
+  grid-area: 1 / 1 / 4 / 9;
+  background-image: url("../images/useraside-banner.png");
+  background-size: 100%;
+  background-repeat: no-repeat no-repeat;
+  background-position: center center;
+}
+
+.userProfileImage {
+  grid-area: 3 / 4 / 5 / 6;
+  display: grid;
+  justify-content: center;
+}
+
+.userProfileImage img {
+  border: 3px solid #15202b;
+}
+
+.seperator {
+  grid-area: 4 / 1 / 5 / 9;
+  background-color: #1c2938;
+  position: relative;
+  z-index: -1;
+}
+
+.userProfile .userScreenName {
+  grid-area: 4 / 1 / 5 / 4;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "userName userHandle";
+  justify-content: center;
+  justify-items: center;
+  align-items: center; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.userProfile .userScreenName .userNameProfile {
+  font-weight: bold;
+  font-size: 28px;
+  color: white;
+}
+
+.userProfile .userScreenName .userHandleProfile {
+  line-height: 30px;
+}
+
+.userProfile .userStats {
+  grid-area: 4 / 6 / 5 / 9;
+}
+
+.userProfile .Tiririts {
+  grid-area: 4 / 6 / 5 / 7;
+}
+.userProfile .Following {
+  grid-area: 4 / 7 / 5 / 8;
+}
+.userProfile .Follower {
+  grid-area: 4 / 8 / 5 / 9;
+}
+
+.stat-counts {
+  color: #1da1f2;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.stat-title {
+  color: #8899a6;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 16px;
+  /* overflow: hidden; */
+}
+
+.userProfile-Messages {
+  grid-area: 5 / 1 / 7 / 9;
+}

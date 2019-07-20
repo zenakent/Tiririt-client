@@ -27,7 +27,6 @@ export const fetchMessages = () => {
     return apiCall("GET", "/api/messages")
       .then(res => {
         dispatch(loadMessages(res));
-        return res;
       })
       .catch(err => {
         dispatch(addError(err.message));

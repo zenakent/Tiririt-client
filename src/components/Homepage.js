@@ -28,6 +28,7 @@ class Homepage extends Component {
     return (
       <div>
         <MessageTimeline
+          userId={this.props.currentUser.user.id}
           followersCount={this.props.currentUser.user.followers.length}
           followingCount={this.props.currentUser.user.following.length}
           messagesCount={messagesCount}

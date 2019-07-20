@@ -7,17 +7,18 @@ import MessageForm from "../containers/MessageForm";
 class MessageList extends Component {
   async componentDidMount() {
     this.props.fetchMessages();
-    console.log(this);
   }
 
   render() {
     const { messages, removeMessage } = this.props;
+
     let messageList = messages.map(m => (
       <MessageItem
         test={m}
         key={m._id}
         date={m.createdAt}
         username={m.user.username}
+        userId={m.user._id}
         text={m.text}
         profileImageUrl={m.user.profileImageUrl}
         removeMessage={removeMessage.bind(this, m.user._id, m._id)}

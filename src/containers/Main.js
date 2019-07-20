@@ -4,7 +4,9 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Homepage from "../components/Homepage";
 import AuthForm from "../components/AuthForm";
+import UserProfile from "../components/UserProfile";
 import { authUser } from "../store/actions/auth";
+
 import { removeError } from "../store/actions/errors";
 import withAuth from "../hocs/withAuth";
 import MessageForm from "../containers/MessageForm";
@@ -12,7 +14,7 @@ import MessageForm from "../containers/MessageForm";
 class Main extends Component {
   render() {
     const { authUser, errors, removeError, currentUser, messages } = this.props;
-    console.log(this.props.currentUser);
+
     return (
       <div className="container">
         <Switch>
@@ -61,6 +63,20 @@ class Main extends Component {
             }}
           />
           <Route
+            exact
+            path="/users/:id"
+            render={props => {
+              return (
+                <UserProfile
+                  {...props}
+                  currentUser={currentUser}
+                  messages={messages}
+                />
+              );
+            }}
+          />
+          <Route
+            exact
             path="/users/:id/messages/new"
             component={withAuth(MessageForm)}
           />

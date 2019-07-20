@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import DefaultProfileImg from "../images/default-profile-image.jpg";
-import BannerImage from "../images/useraside-banner.jpeg";
 import "../css/UserAside.css";
 
 class UserAside extends Component {
@@ -21,7 +20,9 @@ class UserAside extends Component {
         <div className="userScreenName">
           <div className="userName">{this.props.username}</div>
           <div className="userHandle">
-            <Link to="/">@{this.props.username} &nbsp;</Link>
+            <Link to={`/users/${this.props.userId}`}>
+              @{this.props.username} &nbsp;
+            </Link>
           </div>
         </div>
         <div className="Tiririts mt-1">

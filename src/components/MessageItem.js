@@ -19,7 +19,9 @@ class MessageItem extends Component {
             />
           </div>
           <div className="col-10 col-md-9 col-lg-10message-area">
-            <Link to="/">@{this.props.username} &nbsp;</Link>
+            <Link to={`/users/${this.props.userId}`}>
+              @{this.props.username} &nbsp;
+            </Link>
             <span className="text-muted">
               <Moment className="text-muted" format="DD MMM YYYY">
                 {this.props.date}

@@ -19,7 +19,7 @@ class Navbar extends Component {
   }
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark  mb-3">
+      <nav className="navbar navbar-expand-sm navbar-dark">
         <Link to="/" className="navbar-brand">
           <img src={Logo} alt="Home" />
           Tiririt
