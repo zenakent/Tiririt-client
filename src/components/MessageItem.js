@@ -5,11 +5,21 @@ import DefaultProfileImg from "../images/default-profile-image.jpg";
 import "../css/MessageItem.css";
 
 class MessageItem extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleRemove = this.handleRemove.bind(this);
+  }
+
+  handleRemove() {
+    this.props.removeMessage(this.props.currentUserId, this.props.userId);
+  }
+
   render() {
     return (
       <div className="MessageItem">
-        <li className="list-group-item">
-          <div className="MessageItem-img-div col-2 col-md-3 col-lg-2">
+        <li className="list-group-item Message-containment">
+          <div className="MessageItem-img-div">
             <img
               src={this.props.profileImageUrl || DefaultProfileImg}
               alt={this.props.username}
@@ -18,7 +28,8 @@ class MessageItem extends Component {
               className="img-fluid timeline-image"
             />
           </div>
-          <div className="col-10 col-md-9 col-lg-10message-area">
+
+          <div className="message-area">
             <Link to={`/users/${this.props.userId}`}>
               @{this.props.username} &nbsp;
             </Link>
@@ -32,6 +43,7 @@ class MessageItem extends Component {
               <button
                 className="btn btn-danger"
                 onClick={this.props.removeMessage}
+                // onClick={this.handleRemove}
               >
                 Delete
               </button>

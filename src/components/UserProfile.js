@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchUser } from "../store/actions/user";
+import { fetchUser, removeAMessage } from "../store/actions/user";
 import { removeMessage } from "../store/actions/messages";
 import DefaultProfileImg from "../images/default-profile-image.jpg";
 
@@ -11,15 +11,29 @@ import "../css/UserProfile.css";
 class UserProfile extends Component {
   constructor(props) {
     super(props);
-    this.state = { user: null };
+    //try just setting the state to the user messages instead of the whole user
+    this.state = { messages: [] };
+
+    this.handleRemove = this.handleRemove.bind(this);
   }
+
   async componentDidMount() {
     const userId = this.props.match.params.id;
     let user = await this.props.fetchUser(userId);
-    this.setState({ user: user });
+    this.setState({ messages: user.messages });
   }
+
+  handleRemove(currentUser, userId) {
+    this.props.removeMessage(currentUser, userId);
+  }
+
   render() {
-    console.log(this.props.foundUser);
+    if (this.state.user === null) {
+      return <div />;
+    }
+
+    // console.log(this.state.messages);
+    console.log(this.props.messages);
     const {
       profileImageUrl,
       username,
@@ -27,10 +41,22 @@ class UserProfile extends Component {
       following,
       followers
     } = this.props.foundUser;
-    console.log(messages);
+
     if (messages === undefined) {
       return <div />;
     }
+
+    if (profileImageUrl === undefined) {
+      return <div />;
+    }
+    // const {
+    //   profileImageUrl,
+    //   username,
+    //   messages,
+    //   following,
+    //   followers
+    // } = this.state.user;
+
     const messageList = messages.map(m => (
       <MessageItem
         test={m}
@@ -39,11 +65,27 @@ class UserProfile extends Component {
         username={username}
         userId={this.props.foundUser._id}
         text={m.text}
-        profileImageUrl={m.user.profileImageUrl}
-        removeMessage={removeMessage.bind(this, m.user._id, m._id)}
-        isCorrectUser={this.props.currentUser === m.user._id}
+        profileImageUrl={profileImageUrl}
+        removeMessage={this.props.removeAMessage.bind(this, m.user, m._id)}
+        // removeMessage={this.props.removeMessage(m.user, m._id)}
+        isCorrectUser={this.props.currentUser === m.user}
       />
     ));
+
+    // const messageList = this.state.messages.map(m => (
+    //   <MessageItem
+    //     test={m}
+    //     key={m._id}
+    //     text={m.text}
+    //     date={m.createdAt}
+    //     username={username}
+    //     userId={this.props.foundUser._id}
+    //     currentUserId={this.props.currentUser}
+    //     profileImageUrl={profileImageUrl}
+    //     isCorrectUser={this.props.currentUser === m.user}
+    //     removeMessage={this.props.removeAMessage.bind(this, m.user, m._id)}
+    //   />
+    // ));
     return (
       <section className="userProfile">
         <div className="banner" />
@@ -74,15 +116,20 @@ class UserProfile extends Component {
           <span className="stat-title">Following</span>
           <span className="stat-counts">{following.length}</span>
         </div>
-        {/* <div className="userProfile-Messages">{messageList}</div> */}
+        <div className="userProfile-Messages">
+          <ul className="list-group" id="messages">
+            {messageList.reverse()}
+          </ul>
+        </div>
       </section>
     );
   }
 }
 
 function mapStateToProps(state) {
+  console.log(state);
   return {
-    messages: state.messages,
+    messages: state.user.messages,
     currentUser: state.currentUser.user.id,
     foundUser: state.user.user
   };
@@ -90,5 +137,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { fetchUser, removeMessage }
+  { fetchUser, removeMessage, removeAMessage }
 )(UserProfile);

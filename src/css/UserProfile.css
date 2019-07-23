@@ -17,9 +17,10 @@
 .banner {
   grid-area: 1 / 1 / 4 / 9;
   background-image: url("../images/useraside-banner.png");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat no-repeat;
   background-position: center center;
+  /* background-color: #1c2938; */
 }
 
 .userProfileImage {

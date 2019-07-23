@@ -1,43 +1,42 @@
-.MessageItem {
+/* .MessageItem {
   background-color: #16212b;
   border: 1px solid #38444d;
-}
+} */
 
-.MessageItem .list-group-item {
+/* .MessageItem .list-group-item {
   color: white;
   background-color: #16212b;
-}
+} */
 
-.MessageItem:hover {
+/* .MessageItem:hover {
   background-color: #101922;
-}
+} */
 
-#messages .list-group-item {
+/* #messages .list-group-item {
   display: flex;
   align-items: flex-start;
   padding: 7px 20px 12px;
-}
+} */
 
-#messages:not(.no-hover) .list-group-item:hover {
+/* #messages:not(.no-hover) .list-group-item:hover {
   background-color: #101922;
-}
+} */
+
+/*
 
 .MessageItem a {
   color: white;
 }
+*/
 
 .timeline-image {
   border-radius: 50px;
-  /* height: 60px;
-  width: 60px; */
-  /* margin: 2px 30px 10px 10px; */
 }
 
 .MessageItem .MessageItem-img-div {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
 }
 
 #messageTop {
@@ -50,4 +49,29 @@
   font-weight: bold;
   font-size: 30px;
   color: white;
+}
+
+.Message-containment {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "MessageItem-img-div messages-area";
+  background-color: #16212b;
+  border: 1px solid #38444d;
+  border-radius: 0;
+  color: white;
+}
+
+.Message-containment:hover {
+  background-color: #101922;
+}
+
+.messages-area {
+  /* grid-area: 1 / 2 / 2 / 3; */
+  grid-area: messages-area;
+}
+
+.MessageItem-img-div {
+  /* grid-area: 1 / 1 / 2 / 2; */
+  grid-area: MessageItem-img-div;
 }
