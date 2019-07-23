@@ -113,6 +113,9 @@ class UserProfile extends Component {
             <span className="stat-counts">{followers.length}</span>
           </div>
         </div>
+        <div>
+          <ul className="list-group">{messageList.reverse()}</ul>
+        </div>
       </section>
     );
   }

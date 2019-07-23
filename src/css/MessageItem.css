@@ -56,6 +56,7 @@
   grid-template-columns: 1fr 3fr;
   grid-template-rows: 1fr;
   grid-template-areas: "MessageItem-img-div messages-area";
+  grid-column-gap: 5px;
   background-color: #16212b;
   border: 1px solid #38444d;
   border-radius: 0;
