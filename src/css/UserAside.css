@@ -17,8 +17,6 @@
   background-repeat: no-repeat no-repeat;
 }
 
-.UserAside-Banner img {
-}
 .profile-Image {
   grid-area: 2 / 1 / 4 / 3;
   padding: 6px 6px 6px 6px;
