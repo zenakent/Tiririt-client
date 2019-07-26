@@ -53,6 +53,7 @@ ul.nav.navbar-nav li {
   padding: 1rem;
   background-position: 50% 30%;
   background-size: cover;
+  background-repeat: no-repeat no-repeat;
   color: white;
   text-shadow: 0 0 8px #66757f;
 }
@@ -69,3 +70,10 @@ a.btn.btn-danger:hover {
 /* .navbar-header {
   margin: 0 auto;
 } */
+
+@media (max-width: 576px) {
+  .home-hero {
+    background-image: url("./images/Maya2.jpg");
+    background-size: cover;
+  }
+}

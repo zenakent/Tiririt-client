@@ -73,7 +73,7 @@ class UserProfile extends Component {
                 <p className="stat-title">Followers</p>
                 <span className="stat-counts">{followers.length}</span>
               </li>
-              <li className="list-group-item pr-0">
+              <li className="list-group-item">
                 <p className="stat-title">Following</p>
                 <span className="stat-counts ">{following.length}</span>
               </li>
@@ -100,15 +100,15 @@ class UserProfile extends Component {
           <div className="followBtn">
             <button className="btn btn-success">follow</button>
           </div>
-          <div className="smallerTiririts">
+          <div className="smallerTiririts mt-2">
             <span className="stat-title">Tiririts</span>
             <span className="stat-counts">{messages.length}</span>
           </div>
-          <div className="smallerFollowing">
+          <div className="smallerFollowing mt-2">
             <span className="stat-title">Following</span>
             <span className="stat-counts">{following.length}</span>
           </div>
-          <div className="smallerFollower">
+          <div className="smallerFollower mt-2">
             <span className="stat-title">Followers</span>
             <span className="stat-counts">{followers.length}</span>
           </div>
