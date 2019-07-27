@@ -24,6 +24,8 @@
 
 .profile-Image img {
   border: 3px solid #15202b;
+  height: 100px;
+  width: 100px;
 }
 .userScreenName {
   grid-area: 3 / 3 / 4 / 7;

@@ -5,16 +5,6 @@ import DefaultProfileImg from "../images/default-profile-image.jpg";
 import "../css/MessageItem.css";
 
 class MessageItem extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleRemove = this.handleRemove.bind(this);
-  }
-
-  handleRemove() {
-    this.props.removeMessage(this.props.currentUserId, this.props.userId);
-  }
-
   render() {
     return (
       <div className="MessageItem">
@@ -23,8 +13,6 @@ class MessageItem extends Component {
             <img
               src={this.props.profileImageUrl || DefaultProfileImg}
               alt={this.props.username}
-              height="100"
-              width="100"
               className="img-fluid timeline-image"
             />
           </div>
@@ -43,7 +31,6 @@ class MessageItem extends Component {
               <button
                 className="btn btn-danger"
                 onClick={this.props.removeMessage}
-                // onClick={this.handleRemove}
               >
                 Delete
               </button>

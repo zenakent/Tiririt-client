@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchUser, removeAMessage } from "../store/actions/user";
+import {
+  fetchUser,
+  removeAMessage,
+  postAddFollowing,
+  removeAFollowing
+} from "../store/actions/user";
+// import { postAddFollowing } from "../store/actions/following";
 
 import DefaultProfileImg from "../images/default-profile-image.jpg";
 
@@ -26,9 +32,39 @@ class UserProfile extends Component {
     if (messages === undefined) {
       return <div />;
     }
-    console.log(this.props.foundUser);
-    console.log(followers.length);
-    console.log(following);
+    let followButton;
+    console.log(this.props);
+    if (this.props.foundUser._id === this.props.currentUser) {
+      followButton = <button className="Edit-Profile">Edit Profile</button>;
+    } else if (
+      this.props.foundUser.followers.includes(this.props.currentUser)
+    ) {
+      followButton = (
+        <button
+          className="unfollow"
+          onClick={this.props.removeAFollowing.bind(
+            this,
+            this.props.currentUser,
+            this.props.foundUser._id
+          )}
+        >
+          <span>Following</span>
+        </button>
+      );
+    } else {
+      followButton = (
+        <button
+          onClick={this.props.postAddFollowing.bind(
+            this,
+            this.props.currentUser,
+            this.props.foundUser._id
+          )}
+          className="follow"
+        >
+          Follow
+        </button>
+      );
+    }
 
     const messageList = messages.map(m => (
       <MessageItem
@@ -43,7 +79,6 @@ class UserProfile extends Component {
         isCorrectUser={this.props.currentUser === m.user}
       />
     ));
-
     return (
       <section>
         <div className="userProfile">
@@ -61,7 +96,8 @@ class UserProfile extends Component {
             <span className="userHandleProfile">
               <Link to={`/users/${this.props.userId}`}>@{username} &nbsp;</Link>
             </span>
-            <button className="btn btn-success">follow</button>
+
+            {followButton}
           </div>
           <div className="stats">
             <ul className="list-group list-group-horizontal">
@@ -97,9 +133,7 @@ class UserProfile extends Component {
               <Link to={`/users/${this.props.userId}`}>@{username} &nbsp;</Link>
             </div>
           </div>
-          <div className="followBtn">
-            <button className="btn btn-success">follow</button>
-          </div>
+          <div className="followBtn">{followButton}</div>
           <div className="smallerTiririts mt-2">
             <span className="stat-title">Tiririts</span>
             <span className="stat-counts">{messages.length}</span>
@@ -130,5 +164,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { fetchUser, removeAMessage }
+  { fetchUser, removeAMessage, postAddFollowing, removeAFollowing }
 )(UserProfile);

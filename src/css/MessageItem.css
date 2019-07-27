@@ -39,6 +39,11 @@
   justify-content: center;
 }
 
+.MessageItem .MessageItem-img-div img {
+  height: 100px;
+  width: 100px;
+}
+
 #messageTop {
   height: 60px;
   background-color: #1c3448;

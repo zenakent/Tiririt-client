@@ -129,6 +129,8 @@
 
 .profilePic img {
   border: 4px solid #15202b;
+  height: 200px;
+  width: auto;
 }
 
 .userName {
@@ -161,8 +163,68 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   align-content: center;
+  min-width: calc(62.79px);
+  min-height: 39px;
+}
+
+.follow {
+  display: flex;
+  align-items: stretch;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgb(29, 161, 242);
+  border-radius: 9999px;
+  color: rgb(29, 161, 242);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 20px;
+}
+
+.follow:hover {
+  background-color: rgb(29, 161, 242, 0.1);
+}
+
+.unfollow {
+  display: flex;
+  align-items: stretch;
+  background-color: rgb(29, 161, 242);
+  border: 1px solid rgb(29, 161, 242);
+  border-radius: 9999px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 20px;
+}
+
+.unfollow:hover span {
+  display: none;
+}
+
+.unfollow:hover {
+  content: "Unfollow";
+  background-color: rgb(202, 32, 85);
+  border: 1px solid rgb(202, 32, 85);
+}
+.unfollow:hover:before {
+  content: "Unfollow";
+  background-color: rgb(202, 32, 85);
+}
+
+.Edit-Profile {
+  display: flex;
+  align-items: stretch;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgb(29, 161, 242);
+  border-radius: 9999px;
+  color: rgb(29, 161, 242);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 20px;
+}
+
+.Edit-Profile:hover {
+  background-color: rgb(29, 161, 242, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -198,6 +260,8 @@
 }
 .smallerProfilePic img {
   border: 4px solid #15202b;
+  height: 100px;
+  width: 100px;
 }
 
 .smallerScreenName {

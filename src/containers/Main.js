@@ -57,7 +57,7 @@ class Main extends Component {
                   errors={errors}
                   onAuth={authUser}
                   buttonText="Sign me up!"
-                  heading="Join Twitter-Clone Today!"
+                  heading="Join Tiririt Today!"
                 />
               );
             }}
@@ -77,9 +77,22 @@ class Main extends Component {
           />
           <Route
             exact
-            path="/users/:id/messages/new"
+            path="/users/:currentUserId/messages/new"
             component={withAuth(MessageForm)}
           />
+          {/* <Route
+            exact
+            path="/users/:currentUserId/following/addFollowing/:foundUserId"
+            render={props => {
+              return (
+                <UserProfile
+                  {...props}
+                  currentUser={currentUser}
+                  messages={messages}
+                />
+              );
+            }}
+          /> */}
         </Switch>
       </div>
     );
