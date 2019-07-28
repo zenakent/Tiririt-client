@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../store/actions/auth";
+import { searchUser } from "../store/actions/search";
 import Logo from "../images/warbler-logo.png";
 import SearchForm from "../components/SearchForm";
 import "../css/Navbar.css";
@@ -19,6 +20,7 @@ class Navbar extends Component {
     this.props.logout();
   }
   render() {
+    console.log(this.props);
     return (
       <nav className="navbar navbar-expand-sm navbar-dark">
         <Link to="/" className="navbar-brand">
@@ -42,7 +44,7 @@ class Navbar extends Component {
           id="navbarSupportedContent"
         >
           {/* =============================== */}
-          <SearchForm />
+          <SearchForm search={this.props.searchUser} />
           {/* =============================== */}
           {this.props.currentUser.isAuthenticated ? (
             <ul className="navbar-nav justify-content-between">
@@ -81,7 +83,9 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  { logout }
-)(Navbar);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { logout, searchUser }
+  )(Navbar)
+);

@@ -9,9 +9,11 @@ export const getSearch = query => ({
 
 export const searchUser = query => {
   return dispatch => {
-    return apiCall("get"`/api/users/searchUsers`)
+    console.log(query);
+    return apiCall("get", `/api/users/searchUsers?search=${query}`)
       .then(res => {
-        dispatch(getSearch(query));
+        dispatch(getSearch(res));
+        console.log(res);
         return res;
       })
       .catch(err => {
