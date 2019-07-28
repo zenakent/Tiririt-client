@@ -21,6 +21,8 @@ class SearchForm extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
     this.props.search(this.state.search);
+    this.props.history.push("/users/searchUsers");
+    this.setState({ search: "" });
   }
 
   render() {
@@ -29,12 +31,12 @@ class SearchForm extends Component {
         // action="/users/searchUsers"
         // method="GET"
         onSubmit={this.handleSubmit}
-        className="form-inline my-2 my-lg-0"
+        className="form-inline my-2 my-lg-0 mr-4"
       >
         <input
           className="form-control mr-sm-2"
           type="search"
-          placeholder="Search Username/Email"
+          placeholder="Search"
           aria-label="Search"
           name="search"
           value={this.state.search}

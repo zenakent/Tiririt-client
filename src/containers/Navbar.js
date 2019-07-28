@@ -18,9 +18,9 @@ class Navbar extends Component {
   logout(evt) {
     evt.preventDefault();
     this.props.logout();
+    this.props.history.push("/");
   }
   render() {
-    console.log(this.props);
     return (
       <nav className="navbar navbar-expand-sm navbar-dark">
         <Link to="/" className="navbar-brand">
@@ -44,7 +44,10 @@ class Navbar extends Component {
           id="navbarSupportedContent"
         >
           {/* =============================== */}
-          <SearchForm search={this.props.searchUser} />
+          <SearchForm
+            search={this.props.searchUser}
+            history={this.props.history}
+          />
           {/* =============================== */}
           {this.props.currentUser.isAuthenticated ? (
             <ul className="navbar-nav justify-content-between">

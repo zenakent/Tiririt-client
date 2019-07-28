@@ -33,7 +33,7 @@ class UserProfile extends Component {
       return <div />;
     }
     let followButton;
-    console.log(this.props);
+
     if (this.props.foundUser._id === this.props.currentUser) {
       followButton = <button className="Edit-Profile">Edit Profile</button>;
     } else if (

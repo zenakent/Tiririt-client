@@ -29,7 +29,7 @@ class MessageList extends Component {
         {/* <MessageForm /> */}
         <div id="messageTop">Tiririts</div>
         <ul className="list-group" id="messages">
-          {messageList.reverse()}
+          {messageList}
         </ul>
       </div>
     );
