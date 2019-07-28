@@ -5,11 +5,12 @@ import { connect } from "react-redux";
 import Homepage from "../components/Homepage";
 import AuthForm from "../components/AuthForm";
 import UserProfile from "../components/UserProfile";
+import MessageForm from "../containers/MessageForm";
+import SearchResults from "../components/SearchResults";
 import { authUser } from "../store/actions/auth";
 
 import { removeError } from "../store/actions/errors";
 import withAuth from "../hocs/withAuth";
-import MessageForm from "../containers/MessageForm";
 
 class Main extends Component {
   render() {
@@ -64,6 +65,13 @@ class Main extends Component {
           />
           <Route
             exact
+            path="/users/searchUsers"
+            render={props => {
+              return <SearchResults {...props} currentUser={currentUser} />;
+            }}
+          />
+          <Route
+            exact
             path="/users/:id"
             render={props => {
               return (
@@ -80,19 +88,6 @@ class Main extends Component {
             path="/users/:currentUserId/messages/new"
             component={withAuth(MessageForm)}
           />
-          {/* <Route
-            exact
-            path="/users/:currentUserId/following/addFollowing/:foundUserId"
-            render={props => {
-              return (
-                <UserProfile
-                  {...props}
-                  currentUser={currentUser}
-                  messages={messages}
-                />
-              );
-            }}
-          /> */}
         </Switch>
       </div>
     );

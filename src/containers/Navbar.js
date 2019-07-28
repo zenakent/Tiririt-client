@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../store/actions/auth";
 import Logo from "../images/warbler-logo.png";
+import SearchForm from "../components/SearchForm";
 import "../css/Navbar.css";
 
 class Navbar extends Component {
@@ -40,6 +41,9 @@ class Navbar extends Component {
           className="collapse navbar-collapse justify-content-end "
           id="navbarSupportedContent"
         >
+          {/* =============================== */}
+          <SearchForm />
+          {/* =============================== */}
           {this.props.currentUser.isAuthenticated ? (
             <ul className="navbar-nav justify-content-between">
               <li className="nav-item">
