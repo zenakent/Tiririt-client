@@ -42,7 +42,7 @@ class SearchForm extends Component {
           value={this.state.search}
           onChange={this.handleChange}
         />
-        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+        <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">
           Search
         </button>
       </form>
