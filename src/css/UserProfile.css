@@ -92,6 +92,12 @@
   grid-area: 5 / 1 / 7 / 9;
 } */
 
+.followingCards {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .userProfile {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;

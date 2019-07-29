@@ -4,7 +4,9 @@ import {
   GET_USER,
   REMOVE_USER_MESSAGE,
   ADD_FOLLOWING,
-  REMOVE_FOLLOWING
+  REMOVE_FOLLOWING,
+  GET_FOLLOWING,
+  GET_FOLLOWERS
 } from "../actionTypes";
 
 export const loadUser = user => ({
@@ -27,6 +29,16 @@ export const removeFollowing = (currentUserId, foundUserId) => ({
   type: REMOVE_FOLLOWING,
   currentUserId,
   foundUserId
+});
+
+export const loadFollowing = user => ({
+  type: GET_FOLLOWING,
+  user
+});
+
+export const loadFollowers = user => ({
+  type: GET_FOLLOWERS,
+  user
 });
 
 export const fetchUser = user_id => {
@@ -74,6 +86,32 @@ export const removeAFollowing = (currentUserId, foundUserId) => {
       .then(() => dispatch(removeFollowing(currentUserId, foundUserId)))
       .catch(err => {
         addError(err.message);
+      });
+  };
+};
+
+export const fetchFollowing = user_id => {
+  return dispatch => {
+    return apiCall("get", `/api/users/${user_id}/following`)
+      .then(res => {
+        dispatch(loadFollowing(res));
+        return res;
+      })
+      .catch(err => {
+        dispatch(addError(err.message));
+      });
+  };
+};
+
+export const fetchFollowers = user_id => {
+  return dispatch => {
+    return apiCall("get", `/api/users/${user_id}/followers`)
+      .then(res => {
+        dispatch(loadFollowers(res));
+        return res;
+      })
+      .catch(err => {
+        dispatch(addError(err.message));
       });
   };
 };

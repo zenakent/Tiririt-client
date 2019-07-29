@@ -74,11 +74,31 @@ class Main extends Component {
             exact
             path="/users/:id"
             render={props => {
+              return <UserProfile {...props} currentUser={currentUser} />;
+            }}
+          />
+          <Route
+            exact
+            path="/users/:id/following"
+            render={props => {
               return (
                 <UserProfile
                   {...props}
+                  followingPage
                   currentUser={currentUser}
-                  messages={messages}
+                />
+              );
+            }}
+          />
+          <Route
+            exact
+            path="/users/:id/followers"
+            render={props => {
+              return (
+                <UserProfile
+                  {...props}
+                  followersPage
+                  currentUser={currentUser}
                 />
               );
             }}

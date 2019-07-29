@@ -2,7 +2,9 @@ import {
   GET_USER,
   REMOVE_USER_MESSAGE,
   ADD_FOLLOWING,
-  REMOVE_FOLLOWING
+  REMOVE_FOLLOWING,
+  GET_FOLLOWING,
+  GET_FOLLOWERS
 } from "../actionTypes";
 
 const user = (state = { user: {} }, action) => {
@@ -28,6 +30,10 @@ const user = (state = { user: {} }, action) => {
         follower => follower._id !== action.id
       );
       return { user: { ...state.user, followers: [...newFollowersList] } };
+    case GET_FOLLOWING:
+      return { user: action.user };
+    case GET_FOLLOWERS:
+      return { user: action.user };
     default:
       return state;
   }

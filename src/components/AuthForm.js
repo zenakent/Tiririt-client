@@ -28,7 +28,6 @@ class AuthForm extends Component {
     this.props
       .onAuth(authType, this.state)
       .then(() => {
-        console.log(this.state);
         this.props.history.push("/");
       })
       .catch(() => {
