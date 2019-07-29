@@ -31,6 +31,8 @@ class SearchResults extends Component {
         username={r.username}
         userId={r._id}
         key={r._id}
+        bio={r.bio}
+        joinedAt={r.createdAt}
       />
     ));
 

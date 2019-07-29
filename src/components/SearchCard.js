@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Moment from "react-moment";
 
 import "../css/SearchCard.css";
 
@@ -13,16 +14,19 @@ class SearchCard extends Component {
           alt={`${this.props.username} profile picture`}
         />
         <div className="card-body">
-          <h5 className="card-title">{this.props.username}</h5>
+          <h5 className="card-title" style={{ color: "white" }}>
+            {this.props.username}
+          </h5>
           <h6 className="card-title">
             <Link to={`/users/${this.props.userId}`}>
               @{this.props.username} &nbsp;
             </Link>
           </h6>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
+          <i class="far fa-calendar-alt" /> Joined:{" "}
+          <Moment className="text-muted" format="DD MMM YYYY">
+            <span style={{ color: "white" }}>{this.props.joinedAt}</span>
+          </Moment>
+          <p className="card-text">{this.props.bio}</p>
         </div>
       </div>
     );

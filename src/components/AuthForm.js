@@ -4,7 +4,13 @@ import PropTypes from "prop-types";
 class AuthForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { email: "", username: "", password: "", profileImageUrl: "" };
+    this.state = {
+      email: "",
+      username: "",
+      password: "",
+      profileImageUrl: "",
+      bio: ""
+    };
 
     this.handeChange = this.handeChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,6 +28,7 @@ class AuthForm extends Component {
     this.props
       .onAuth(authType, this.state)
       .then(() => {
+        console.log(this.state);
         this.props.history.push("/");
       })
       .catch(() => {
@@ -30,7 +37,7 @@ class AuthForm extends Component {
   }
 
   render() {
-    const { email, username, password, profileImageUrl } = this.state;
+    const { email, username, password, profileImageUrl, bio } = this.state;
     const {
       heading,
       buttonText,
@@ -81,6 +88,15 @@ class AuthForm extends Component {
                     onChange={this.handeChange}
                     value={username}
                     type="text"
+                  />
+                  <label htmlFor="bio">Bio: </label>
+                  <input
+                    className="form-control"
+                    id="bio"
+                    name="bio"
+                    onChange={this.handeChange}
+                    type="text"
+                    value={bio}
                   />
                   <label htmlFor="image-url">Image URL: </label>
                   <input
