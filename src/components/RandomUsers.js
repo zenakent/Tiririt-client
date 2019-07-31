@@ -6,11 +6,9 @@ import "../css/RandomUsers.css";
 
 class RandomUsers extends Component {
   render() {
-    console.log(this.props.currentUser);
     let followButton;
 
     if (this.props.currentUser.user.following.includes(this.props.userId)) {
-      console.log("hello there");
       followButton = (
         <button
           className="unfollow"
@@ -41,34 +39,22 @@ class RandomUsers extends Component {
       <div className="RandomUsers">
         <li className="list-group-item">
           <div className="row">
-            <div className="col-3">
+            <div className="col-4">
               <img
                 className="img-fluid rounded-circle"
                 src={this.props.profileImageUrl}
                 alt="profile image"
               />
             </div>
-            <div className="col-4">
-              <div>{this.props.username}</div>
+            <div className="col-6">
+              <div className="RandomUsersUsername">{this.props.username}</div>
               <div>
                 <Link to={`/users/${this.props.userId}`}>
                   @{this.props.username} &nbsp;
                 </Link>
               </div>
             </div>
-            <div className="col-5 px-0">
-              {/* <button
-                className="followButton"
-                onClick={this.props.postAddFollowing.bind(
-                  this,
-                  this.props.currentUser.user.id,
-                  this.props.userId
-                )}
-              >
-                follow{" "}
-              </button> */}
-              {followButton}
-            </div>
+            {/* <div className="col-5 px-0">{followButton}</div> */}
           </div>
         </li>
       </div>

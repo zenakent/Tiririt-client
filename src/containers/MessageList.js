@@ -10,6 +10,9 @@ class MessageList extends Component {
   }
 
   render() {
+    console.log(this.props);
+    console.log(this.props.messages);
+    console.log(this.props.currentUser.user.following);
     const { messages, removeMessage } = this.props;
     let messageList = messages.map(m => (
       <MessageItem
@@ -21,9 +24,16 @@ class MessageList extends Component {
         text={m.text}
         profileImageUrl={m.user.profileImageUrl}
         removeMessage={removeMessage.bind(this, m.user._id, m._id)}
-        isCorrectUser={this.props.currentUser === m.user._id}
+        isCorrectUser={this.props.currentUser.user.id === m.user._id}
       />
     ));
+
+    let newMessageList = this.props.messages.filter(m => {
+      if (this.props.currentUser.user.following.includes(m.user._id)) {
+        return m.user._id;
+      }
+    });
+    console.log(newMessageList);
     return (
       <div>
         {/* <MessageForm /> */}
@@ -39,7 +49,7 @@ class MessageList extends Component {
 function mapStateToProps(state) {
   return {
     messages: state.messages,
-    currentUser: state.currentUser.user.id
+    currentUser: state.currentUser
   };
 }
 

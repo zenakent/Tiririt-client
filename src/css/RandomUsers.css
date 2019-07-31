@@ -22,3 +22,9 @@
 .RandomUsers .follow:hover {
   background-color: rgb(29, 161, 242, 0.1);
 }
+
+.RandomUsers .RandomUsersUsername {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
