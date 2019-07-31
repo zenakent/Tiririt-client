@@ -10,11 +10,18 @@ class MessageList extends Component {
   }
 
   render() {
-    console.log(this.props);
-    console.log(this.props.messages);
-    console.log(this.props.currentUser.user.following);
-    const { messages, removeMessage } = this.props;
-    let messageList = messages.map(m => (
+    // console.log(this.props);
+    // console.log(this.props.messages);
+    // console.log(this.props.currentUser.user.following);
+    let newMessageList = this.props.messages.filter(m => {
+      if (this.props.currentUser.user.following.includes(m.user._id)) {
+        return m.user._id;
+      }
+    });
+
+    const { removeMessage } = this.props;
+
+    let messageList = newMessageList.map(m => (
       <MessageItem
         test={m}
         key={m._id}
@@ -28,12 +35,6 @@ class MessageList extends Component {
       />
     ));
 
-    let newMessageList = this.props.messages.filter(m => {
-      if (this.props.currentUser.user.following.includes(m.user._id)) {
-        return m.user._id;
-      }
-    });
-    console.log(newMessageList);
     return (
       <div>
         {/* <MessageForm /> */}

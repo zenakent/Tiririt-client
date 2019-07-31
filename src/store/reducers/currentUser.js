@@ -26,8 +26,9 @@ export default (state = DEFAULT_STATE, action) => {
       };
     case REMOVE_FOLLOWING:
       const newFollowingList = state.user.following.filter(
-        following => following._id !== action.id
+        following => following !== action.foundUserId
       );
+
       return {
         isAuthenticated: { ...state.isAuthenticated },
         user: {

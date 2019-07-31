@@ -8,15 +8,7 @@ class MessageTimeline extends Component {
     return (
       <div className="row flex-column flex-md-row justify-content-center mt-3">
         <div className="col-sm-12 col-md-5 col-lg-4 order-sm-1 mb-sm-3 mb-3">
-          <UserAside
-            userId={this.props.userId}
-            followersCount={this.props.followersCount}
-            followingCount={this.props.followingCount}
-            profileImageUrl={this.props.profileImageUrl}
-            profileBannerUrl={this.props.profileBannerUrl}
-            username={this.props.username}
-            messagesCount={this.props.messagesCount}
-          />
+          <UserAside />
 
           <WhoToFollow />
         </div>
