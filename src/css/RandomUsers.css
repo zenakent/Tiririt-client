@@ -7,7 +7,7 @@
   background-color: #15202b;
 }
 
-.RandomUsers .followButton {
+.RandomUsers .follow {
   display: flex;
   align-items: stretch;
   background-color: rgba(0, 0, 0, 0);
@@ -19,6 +19,6 @@
   padding: 10px 20px;
 }
 
-.RandomUsers .followButton:hover {
+.RandomUsers .follow:hover {
   background-color: rgb(29, 161, 242, 0.1);
 }

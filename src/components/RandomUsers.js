@@ -1,12 +1,42 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { postAddFollowing } from "../store/actions/user";
+import { postAddFollowing, removeAFollowing } from "../store/actions/user";
 import "../css/RandomUsers.css";
 
 class RandomUsers extends Component {
   render() {
-    console.log(this.props);
+    console.log(this.props.currentUser);
+    let followButton;
+
+    if (this.props.currentUser.user.following.includes(this.props.userId)) {
+      console.log("hello there");
+      followButton = (
+        <button
+          className="unfollow"
+          onClick={this.props.removeAFollowing.bind(
+            this,
+            this.props.currentUser.user.id,
+            this.props.userId
+          )}
+        >
+          <span>Following</span>
+        </button>
+      );
+    } else {
+      followButton = (
+        <button
+          onClick={this.props.postAddFollowing.bind(
+            this,
+            this.props.currentUser.user.id,
+            this.props.userId
+          )}
+          className="follow"
+        >
+          Follow
+        </button>
+      );
+    }
     return (
       <div className="RandomUsers">
         <li className="list-group-item">
@@ -26,17 +56,18 @@ class RandomUsers extends Component {
                 </Link>
               </div>
             </div>
-            <div className="col-5">
-              <button
+            <div className="col-5 px-0">
+              {/* <button
                 className="followButton"
                 onClick={this.props.postAddFollowing.bind(
                   this,
-                  this.props.currentUser,
+                  this.props.currentUser.user.id,
                   this.props.userId
                 )}
               >
                 follow{" "}
-              </button>
+              </button> */}
+              {followButton}
             </div>
           </div>
         </li>
@@ -47,12 +78,12 @@ class RandomUsers extends Component {
 
 function mapStateToProps(state) {
   return {
-    currentUser: state.currentUser.user.id,
+    currentUser: state.currentUser,
     getRandomUser: state.getRandomUser
   };
 }
 
 export default connect(
   mapStateToProps,
-  { postAddFollowing }
+  { postAddFollowing, removeAFollowing }
 )(RandomUsers);
