@@ -6,7 +6,6 @@ import "../css/UserAside.css";
 
 class UserAside extends Component {
   render() {
-    console.log(this.props);
     const {
       id,
       username,
