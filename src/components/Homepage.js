@@ -33,6 +33,7 @@ class Homepage extends Component {
           followingCount={this.props.currentUser.user.following.length}
           messagesCount={messagesCount}
           profileImageUrl={this.props.currentUser.user.profileImageUrl}
+          profileBannerUrl={this.props.currentUser.user.profileBannerUrl}
           username={this.props.currentUser.user.username}
           followers={this.props.currentUser}
         />

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   fetchUser,
   removeAMessage,
@@ -45,9 +45,9 @@ class UserProfile extends Component {
   }
 
   render() {
-    console.log(this.props);
     const {
       profileImageUrl,
+      profileBannerUrl,
       username,
       messages,
       following,
@@ -136,7 +136,10 @@ class UserProfile extends Component {
     return (
       <section>
         <div className="userProfile">
-          <div className="banner" />
+          <div
+            className="banner"
+            style={{ backgroundImage: `url(${profileBannerUrl})` }}
+          />
           <div className="userHeader" />
           <div className="profilePic">
             <img

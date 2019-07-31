@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MessageList from "../containers/MessageList";
 import UserAside from "../components/UserAside";
+import WhoToFollow from "../containers/WhoToFollow";
 
 class MessageTimeline extends Component {
   render() {
@@ -12,9 +13,12 @@ class MessageTimeline extends Component {
             followersCount={this.props.followersCount}
             followingCount={this.props.followingCount}
             profileImageUrl={this.props.profileImageUrl}
+            profileBannerUrl={this.props.profileBannerUrl}
             username={this.props.username}
             messagesCount={this.props.messagesCount}
           />
+
+          <WhoToFollow />
         </div>
         <div className="col-sm-12 col-md-7 col-lg-8 order-sm-2">
           <MessageList />

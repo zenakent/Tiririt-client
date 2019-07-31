@@ -6,7 +6,8 @@ import {
   ADD_FOLLOWING,
   REMOVE_FOLLOWING,
   GET_FOLLOWING,
-  GET_FOLLOWERS
+  GET_FOLLOWERS,
+  GET_RANDOM_USERS
 } from "../actionTypes";
 
 export const loadUser = user => ({

@@ -7,7 +7,10 @@ class UserAside extends Component {
   render() {
     return (
       <section className="UserAside">
-        <div className="UserAside-Banner">
+        <div
+          className="UserAside-Banner"
+          style={{ backgroundImage: `url(${this.props.profileBannerUrl})` }}
+        >
           {/* <img src={BannerImage} className="img-fluid" alt="..." /> */}
         </div>
         <div className="profile-Image">

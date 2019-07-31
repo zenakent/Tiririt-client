@@ -36,7 +36,14 @@ class AuthForm extends Component {
   }
 
   render() {
-    const { email, username, password, profileImageUrl, bio } = this.state;
+    const {
+      email,
+      username,
+      password,
+      profileImageUrl,
+      bio,
+      profileBannerUrl
+    } = this.state;
     const {
       heading,
       buttonText,
@@ -105,6 +112,15 @@ class AuthForm extends Component {
                     onChange={this.handeChange}
                     type="text"
                     value={profileImageUrl}
+                  />
+                  <label htmlFor="banner-url">Banner URL: </label>
+                  <input
+                    className="form-control"
+                    id="banner-url"
+                    name="profileBannerUrl"
+                    onChange={this.handeChange}
+                    type="text"
+                    value={profileBannerUrl}
                   />
                 </div>
               )}

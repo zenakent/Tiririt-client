@@ -11,3 +11,4 @@ export const REMOVE_FOLLOWER = "REMOVE_FOLLOWER"; //havent done this yet
 export const SEARCH_USERS = "SEARCH_USERS";
 export const GET_FOLLOWING = "GET_FOLLOWING";
 export const GET_FOLLOWERS = "GET_FOLLOWERS";
+export const GET_RANDOM_USERS = "GET_RANDOM_USERS";

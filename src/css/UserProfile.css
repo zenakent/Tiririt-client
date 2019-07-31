@@ -114,7 +114,7 @@
 .banner {
   grid-area: 1 / 1 / 4 / 9;
   /* grid-area: banner; */
-  background-image: url("../images/useraside-banner.png");
+  /* background-image: url("../images/useraside-banner.png"); */
   background-size: cover;
   background-repeat: no-repeat no-repeat;
   background-position: center center;
