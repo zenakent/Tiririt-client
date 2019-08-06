@@ -11,7 +11,7 @@ import {
 } from "../store/actions/user";
 // import { postAddFollowing } from "../store/actions/following";
 
-import DefaultProfileImg from "../images/default-profile-image.jpg";
+import DefaultProfileImg from "../images/default-profile-image3.png";
 
 import MessageItem from "./MessageItem";
 import SearchCard from "./SearchCard";

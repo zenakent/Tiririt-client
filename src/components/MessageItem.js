@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
-import DefaultProfileImg from "../images/default-profile-image.jpg";
+import DefaultProfileImg from "../images/default-profile-image3.png";
 import "../css/MessageItem.css";
 
 class MessageItem extends Component {

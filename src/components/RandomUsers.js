@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { postAddFollowing, removeAFollowing } from "../store/actions/user";
+import DefaultProfileImg from "../images/default-profile-image3.png";
 import "../css/RandomUsers.css";
 
 class RandomUsers extends Component {
@@ -42,7 +43,7 @@ class RandomUsers extends Component {
             <div className="col-4">
               <img
                 className="img-fluid rounded-circle"
-                src={this.props.profileImageUrl}
+                src={this.props.profileImageUrl || DefaultProfileImg}
                 alt="profile image"
               />
             </div>
